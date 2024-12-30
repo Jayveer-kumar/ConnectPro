@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">connect<span>Pro</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/connectpro">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li id="postBtn">  Post  </li>
+                <% if(!currentUser) {%>
+                    <li><a href="/authenticate/signup">Signup</a></li>
+                    <li><a href="/authenticate/login">Login</a></li>
+                <%}%>  
+                 
+                <% if(currentUser) { %>
+                    <div class="userProfile" onclick="toggleUserInfo(event)">
+                        <div class="profile-circle">
+                            <img src="<%=currentUser.image%>" alt="User  Profile" /> 
+                        </div>
+                        <div class="user-info-popup" id="userInfoPopup">
+                            <p class="userProfileName" ><strong><%= currentUser.name %></strong></p>
+                            <p class="userProfileEmail" ><%= currentUser.email %></p>
+                            <p class="userProfileBio"><%= currentUser.bio %> </p>
+                            <button class="userProfileCloseBtn" onclick="toggleUserInfo(event)">Close</button>
+                            <a class="userProfileEditBtn" href="/user/<%=currentUser.id%>"> View Profile</a> 
+                        </div>  
+                    </div>
+               <% } %>          
+            </ul>            
+            <div class="hamburger" id="hamburger-menu">
+                <span><i class="fa-solid fa-bars"></i></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="messagebox" id="messageBox">
+        <button class="closeBtn" id="closeBtn">✖</button>
+        <div class="userinfoProfile">
+          <img src="https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Ym95fGVufDB8fDB8fHww" alt="User Image" class="userProfileImage">
+          <h4 class="userProfileName">Jayveer Kumar</h4>
+        </div>
+        <textarea class="messageinputForPost" placeholder="What do you want to talk about"></textarea>
+        <div class="Postcontrols">
+          <button class="imagebtn">Image</button>
+          <button class="mediabtn">Video</button>
+          <button class="calendarbtn">📅</button>
+          <button class="addbtn">➕</button>
+        </div>
+        <div class="postbtncontainer">
+          <button class="post-btn">Post</button>
+        </div>
+      </div>
+      <script src="/javascript/navbar.js"></script>
+</body>
+</html>
+
+
+
+
+  

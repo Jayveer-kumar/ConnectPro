@@ -1,0 +1,34 @@
+<%- layout('layout/boilerplate.ejs')%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+   <div class="formContainer">
+   <form action="/authenticate/signup" method="post">
+    <h2>Register</h2>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="user[name]" >
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="user[username]" required pattern="^[a-zA-Z0-9_.-]{3,30}$" title="Username can include letters, numbers, _, ., -, and must be 3-30 characters long" /> 
+    <label for="password">Password</label>
+    <input type="password" id="password" name="user[password]" >
+    <label for="email">Email</label>
+    <input type="email" id="email" name="user[email]" >
+    <label for="age">Age</label>
+    <input type="number" id="age" name="user[age]" >
+    <label for="image">Image</label>
+    <input type="text" id="image" name="user[image]" placeholder="Image link Only" >
+    <label for="bio"></label>
+    <textarea id="bio" name="user[bio]" placeholder="About Your Self" ></textarea>
+    <button type="submit">Register</button>
+</form>
+</div>
+</body>
+</html> 
+
+<!-- Rgistration Form  Code Number 6. -->

@@ -1,0 +1,40 @@
+ <%- layout('layout/boilerplate.ejs')%> 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/css/edit.css">
+</head>
+     <div class="userProfileContainer">
+    <div class="profile-container">
+    <img src="<%= user.image %>" alt="User Profile Picture">
+    <h2>Edit Profile</h2>
+    <form action="/user/<%=user.id%>?_method=put" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="user[name]" value="<%= user.name %>" placeholder="Enter your name">
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="user[username]" value="<%= user.username %>" required pattern="^[a-zA-Z0-9_.-]{3,30}$" title="Username can include letters, numbers, _, ., -, and must be 3-30 characters long">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="user[email]" value="<%= user.email %>">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="user[password]" value="<%= user.password %>">
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="user[age]" value="<%= user.age %>">
+
+        <label for="image">Image URL</label>
+        <input type="text" id="image" name="user[image]" value="<%= user.image %>" placeholder="Image link only">
+
+        <label for="bio">Bio</label>
+        <textarea id="bio" name="user[bio]" rows="4" placeholder="Tell us about yourself"><%= user.bio %></textarea>
+
+        <button type="submit">Save Changes</button>
+        <button type="button" class="cancel-btn" onclick="window.location.href='/user/<%= user.id %>'">Cancel</button>
+    </form>
+</div>
+</div>
+</body>
+</html>

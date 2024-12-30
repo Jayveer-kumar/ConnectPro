@@ -1,0 +1,30 @@
+<%- layout('layout/boilerplate.ejs')%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" href="/css/show.css">
+</head>
+
+<div class="user-details-container"> 
+    <div class="user-card">
+        <img src="<%=user.image%>" alt="User Image" class="user-image">
+        <div class="user-info">
+            <h1 class="user-name"><%=user.name%></h1>
+            <p class="user-username">@<%=user.username%></p>
+            <p class="user-email"><%=user.email%></p>
+            <p class="user-age"><%=user.age%></p>
+            <p class="user-bio"><%=user.bio%></p>
+        </div>
+        <form action="/user/<%=user.id%>/edit">
+            <button class="edit">Edit profile</button>
+        </form> 
+    </div> 
+      
+</div>
+
+</body>
+</html>

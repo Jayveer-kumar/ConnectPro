@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Management</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+<body>
+    <%- include('../include/navbar.ejs')%> 
+   
+          <%if(success && success.length){%> 
+        <div class="messageContainer">
+            <div class="message">
+              <p class="messageText"> <%-success%></p>
+              <i class="fa-solid fa-xmark markIconBtn" onclick="hideMessage()"></i>
+            </div>
+          </div>
+          <%}%>
+        <%- body %>  
+        
+     
+    <%- include('../include/footer.ejs')%>
+    <script>
+        function hideMessage() {
+          const messageContainer = document.querySelector(".messageContainer");
+          messageContainer.classList.add("hide");
+          setTimeout(() => {
+          messageContainer.style.display = "none"; // Hide the element
+          }, 500);
+        }
+      </script>
+    <script src="/javascript/logic.js"></script>   
+</body>
+</html>
