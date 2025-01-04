@@ -1,0 +1,253 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+   position: relative;
+   overflow-x: hidden;
+   background-color: #ffffff;
+}
+
+nav{
+    position: fixed;            
+    width: 100%;
+    top:0;
+}
+.navContainer{
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navContainer .logoContainer{
+    max-width: 150px;
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 600;
+    padding:5px 4px;
+    border-radius: 10px;
+    margin:0 20px;
+}
+.navContainer .logoContainer .logo{
+    width: 100%;
+    padding:0 10px;
+    cursor: pointer;
+}
+.navContainer .logoContainer .logo span{
+    color:red;
+}
+.navContainer .linkContainer{
+    flex: 0.6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+.navContainer .linkContainer .showNavbar {
+ position: absolute;
+ top: 40px; /* Ensure it doesn't overlap with the navbar */
+ right: -20rem;
+ width:180px;
+ height: auto; /* Adjust height dynamically */
+ background-color: black;
+ display: flex;
+ flex-direction: column; /* Important for column layout */
+ justify-content: flex-start;
+ align-items: flex-start;
+ padding: 10px; /* Add some spacing for child elements */
+ transition:  right 1s ease;
+ border-top-left-radius: 10px;
+ border-bottom-left-radius: 10px;
+}
+
+.navContainer .linkContainer .showNavbar button,
+.navContainer .linkContainer .showNavbar select {
+    padding:4px 14px;
+    border:1.5px solid transparent;
+    margin:5px;
+    border-radius: 7px;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.793);
+    color:white;
+    cursor: pointer;
+    margin: 10px 0; 
+}
+.navContainer .linkContainer .showNavbar button:hover{
+    border:1.5px solid rgb(239, 45, 6);
+    box-shadow:0 0 15px white;
+}
+.navContainer .linkContainer .visiable{
+    right:0;
+}
+.navContainer .linkContainer .Show{
+    display: none;
+}        
+.navContainer .linkContainer .allLinks{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.navContainer .linkContainer .allLinks div{
+    position: relative;
+}
+.navContainer .linkContainer .allLinks div select{
+     padding: 4px;
+     background-color: antiquewhite;
+     border:2px solid black;
+     border-radius: 6px;
+     transition: all 0.3s ease;
+} 
+.navContainer .linkContainer .allLinks div select option{
+    background-color: #ffffff;
+   color:rgb(0, 0, 0);
+}       
+.navContainer .linkContainer .allLinks div select:hover{
+    border:2px solid white;
+    box-shadow:  0 5px 10px orange;
+    background-color: rgba(0, 0, 0, 0.618);
+    color:white;
+}
+.navContainer .linkContainer .allLinks div button{
+    padding:6px 18px;
+    border: 1.5px solid transparent;
+    margin:5px;
+    border-radius: 7px;
+    font-weight: 400;
+    font-size: 9px;
+    background-color: rgb(30, 25, 19);
+    color:white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.navContainer .linkContainer .allLinks div button:hover{ 
+    border:1.5px solid rgb(239, 45, 6);
+    box-shadow:  0 0 10px rgb(20, 18, 13);
+    background-color: rgba(0, 0, 0, 0.877);
+    color:white;
+}
+.toggelDiv{
+    display: none;
+}
+.toggelDiv button{
+    padding:5px 14px;
+    border:1.5px solid transparent;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: rgb(30, 25, 19);
+    color:white;
+    transition: all 0.3s ease;
+}
+.toggelDiv button:hover{
+    border:1.5px solid rgb(239, 45, 6);
+    box-shadow:  0 0 10px rgb(48, 39, 22);
+    background-color: rgba(0, 0, 0, 0.877);
+    color:white;
+}
+
+
+/* Hero Section :start */
+
+.Mainherosection{
+    height: 488px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Mainherosection div{
+    margin:20px;
+}
+.Mainherosection .herosectionheadingcontainer{
+    height: 380px;
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+}
+/* .herosectionheadingcontainer .herosectionmainHeadingbox {
+    
+} */
+.herosectionheadingcontainer .herosectionmainHeadingbox h3{
+      font-size: 40px;
+      letter-spacing: 1.5px;
+      padding:3px 10px;
+}
+.herosectionheadingcontainer .herosectionmainimpactheadingline{
+    width: 500px;
+}
+.herosectionheadingcontainer .herosectionmainimpactheadingline p{
+    padding:3px 10px;
+    font-size: 15px;
+    font-weight: 300;
+}
+.herosectionheadingcontainer .joinButtonConatiner{
+    margin-top:20px;
+    padding:3px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.herosectionheadingcontainer .joinButtonConatiner button{
+    padding:7px 14px;
+    background-color: rgba(0, 0, 0, 0.925);
+    color:rgb(241, 241, 241);
+    border:1.5px solid transparent;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+.herosectionheadingcontainer .joinButtonConatiner button:hover{
+    border:1.5px solid red;
+    box-shadow: 0 0 10px red ;
+}
+
+.Mainherosection .herosectionimageContainer {
+    position: relative;
+    height: 340px;
+    width: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 50px rgb(239, 8, 8);
+    border-radius: 50px;
+}
+
+.herosectionimageContainer .herosectionmainimagebox {
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.herosectionimageContainer .herosectionmainimagebox .heromainimage {
+    height: 100%;
+    width: 100%;
+    background-color: chartreuse;
+    background-image: url(https://www.shutterstock.com/image-photo/close-head-shot-portrait-preppy-260nw-1433809418.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: rotate(0deg); /* Initially straight */
+    transform-origin: center center;
+}
+
+@media (max-width:820px){
+    .allLinks div{
+        display: none;
+    }
+    .toggelDiv{
+        display: block;
+        margin:0 20px; 
+    }
+}
+
+@media (max-width:335px){
+    .navContainer .linkContainer .showNavbar{
+        width:120px;
+    }
+    .navContainer .linkContainer .showNavbar div select{
+       width: 20px;
+    }
+}
