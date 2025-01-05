@@ -7,41 +7,55 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="#">connect<span>Pro</span></a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="/connectpro">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li id="postBtn">  Post  </li>
-                <% if(!currentUser) {%>
-                    <li><a href="/authenticate/signup">Signup</a></li>
-                    <li><a href="/authenticate/login">Login</a></li>
-                <%}%>  
-                 
-                <% if(currentUser) { %>
-                    <div class="userProfile" onclick="toggleUserInfo(event)">
-                        <div class="profile-circle">
-                            <img src="<%=currentUser.image%>" alt="User  Profile" /> 
+    <head>
+        <nav>
+            <div class="navContainer">
+                <div class="logoContainer">
+                    <div class="logo"> <h4>Connect <span>Pro</span></h4></div>
+                </div>
+                <div class="linkContainer">
+                    <div class="allLinks" id="allLinks">
+                        <div class="addTask">
+                            <a href="/connectpro" id="Home">Home</a>
                         </div>
-                        <div class="user-info-popup" id="userInfoPopup">
-                            <p class="userProfileName" ><strong><%= currentUser.name %></strong></p>
-                            <p class="userProfileEmail" ><%= currentUser.email %></p>
-                            <p class="userProfileBio"><%= currentUser.bio %> </p>
-                            <button class="userProfileCloseBtn" onclick="toggleUserInfo(event)">Close</button>
-                            <a class="userProfileEditBtn" href="/user/<%=currentUser.id%>"> View Profile</a> 
-                        </div>  
+                        <div class="nextmeet" id="See">
+                            <a href="#next-meet">Next Meet</a>
+                        </div>
+                        <div class="descover" id="Pending">
+                            <a href="#discover">Discover</a>
+                        </div>
+                        <div class="support">
+                            <!-- add id id="postBtn" -->
+                            <a href="#support">Support</a>  
+                        </div>
+                        <% if (!currentUser) { %>
+                            <div class="login">
+                                <a href="/authenticate/login">Login</a>
+                            </div>
+                        <% } else { %>
+                            <div class="userProfile" onclick="toggleUserInfo(event)">
+                                <div class="profile-circle">
+                                    <img src="<%= currentUser.image %>" alt="User Profile" />
+                                </div>
+                                <div class="user-info-popup" id="userInfoPopup">
+                                    <p class="userProfileName"><strong><%= currentUser.name %></strong></p>
+                                    <p class="userProfileEmail"><%= currentUser.email %></p>
+                                    <p class="userProfileBio"><%= currentUser.bio %></p>
+                                    <button class="userProfileCloseBtn" onclick="toggleUserInfo(event)">Close</button>
+                                    <a class="userProfileEditBtn" href="/user/<%= currentUser.id %>">View Profile</a>
+                                </div>
+                            </div>
+                        <% } %>
                     </div>
-               <% } %>          
-            </ul>            
-            <div class="hamburger" id="hamburger-menu">
-                <span><i class="fa-solid fa-bars"></i></span>
+                    <div class="showNavbar Show"></div>
+                    <div class="toggelDiv">
+                        <button id="toggelButtonContent">More</button>
+                    </div>
+                </div>
             </div>
         </nav>
-    </header>
+    </head>
+    
 
     <div class="messagebox" id="messageBox">
         <button class="closeBtn" id="closeBtn">✖</button>

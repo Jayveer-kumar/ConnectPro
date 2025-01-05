@@ -1,21 +1,61 @@
 <%- layout('layout/boilerplate.ejs')%>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>  
+
+    <div class="Mainherosection">
+        <div class="herosectionheadingcontainer">
+            <div class="herosectionmainHeadingbox">
+                <h3>Build Your Network<br> Shape Your Career.</h3>
+            </div>
+            <div class="herosectionmainimpactheadingline">
+                <p>Share your innovative ideas, showcase your greatest achievements, <br> and seamlessly connect with like-minded professionals to unlock endless opportunities
+                </p>
+            </div>
+            <div class="joinButtonConatiner">
+                <button>Join Today</button>
+            </div>
+        </div>
+        <div class="herosectionimageContainer">
+                 <div class="herosectionmainimagebox">
+                    <div class="heromainimage"></div>
+                 </div>
+        </div>
+    </div>
+
+    
 <div class="usersCard">
 
-<% for(let user of allUser) { %>
-    <a href="/user/<%=user.id%>">
-    <div class="user-card">        
-        <div class="user-image">
-            <img src="<%=user.image%>" alt="User Image">
-        </div>
-        <div class="user-info">
-            <h3 class="user-name"><%=user.name%></h3>
-            <p class="user-details"><%=user.age%></p>
-            <p class="user-details"><%=user.email%></p>
-            <p class="user-details"><%=user.bio%></p>
-        </div>
-    </div> 
-</a>  
-<%} %>
+    <% for(let user of allUser) { %>
+        <a href="/user/<%=user.id%>">
+        <div class="user-card">        
+            <div class="user-image">
+                <img src="<%=user.image%>" alt="User Image">
+            </div>
+            <div class="user-info">
+                <h3 class="user-name"><%=user.name%></h3>
+                <p class="user-details"><%=user.age%></p>
+                <p class="user-details"><%=user.email%></p>
+                <p class="user-details"><%=user.bio%></p>
+            </div>
+        </div> 
+    </a>  
+    <%} %>
+    
+    </div>
 
-</div>
+    <script src="/javascript/index.js"></script>
+</body>
+</html>
+
+
+
+
+

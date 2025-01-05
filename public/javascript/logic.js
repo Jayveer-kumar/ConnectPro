@@ -1,11 +1,3 @@
-// Toggle the mobile navbar when the hamburger menu is clicked
-const hamburgerMenu = document.getElementById('hamburger-menu');
-const navLinks = document.querySelector('.nav-links');
-
-hamburgerMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
 let lastScrollPosition = 0;
 const navbar = document.querySelector('.navbar');
 
@@ -42,4 +34,52 @@ window.onclick = function(event) {
         userInfoPopup.style.display = "none";
     }
 };
+
+
+document.addEventListener("DOMContentLoaded",()=>{
+    const toggelbtnDiv=document.querySelector(".toggelDiv");
+    const linkContainer=document.querySelector(".linkContainer");
+    const allLinksContainer=document.querySelector("#allLinks");
+    const showNavbar=document.querySelector(".showNavbar");
+    const toggelButtonContent=document.getElementById("toggelButtonContent");
+
+    toggelbtnDiv.addEventListener("click", () => {
+        console.log("Toggle Button Activated:");
+        if (showNavbar.classList.contains("Show")) {
+            showNavbar.classList.remove("Show");
+            setTimeout(() => {
+                // Move each child of allLinksContainer into showNavbar
+                while (allLinksContainer.firstChild) {
+                    showNavbar.appendChild(allLinksContainer.firstChild);
+                }
+                toggelButtonContent.textContent = "Back";
+                showNavbar.classList.add("visiable");
+            }, 30);
+        } else {
+            showNavbar.classList.remove("visiable");
+            setTimeout(() => {
+                toggelButtonContent.textContent = "More";
+                showNavbar.classList.add("Show");
+    
+                // Move links back into allLinksContainer
+                while (showNavbar.firstChild) {
+                    allLinksContainer.appendChild(showNavbar.firstChild);
+                }
+                linkContainer.appendChild(allLinksContainer);
+            }, 1000);
+        } 
+});
+    
+   // Handel Resize
+
+   window.addEventListener("resize", () => {
+    if (window.innerWidth > 820) {
+        // Move links back to the original container if screen size increases
+        if (!linkContainer.contains(allLinksContainer)) {
+            linkContainer.appendChild(allLinksContainer);
+        }
+    }
+});
+})
+
 
